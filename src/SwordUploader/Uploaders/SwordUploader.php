@@ -2,7 +2,10 @@
 
 namespace CSUNMetaLab\SwordUploader\Uploaders;
 
+use Exception;
 use \SWORDAPPClient;
+
+use CSUNMetaLab\SwordUploader\Exceptions\CannotParseServiceDocumentException;
 
 class SwordUploader
 {
@@ -25,19 +28,25 @@ class SwordUploader
 	/**
 	 * Requests and returns the service document based on how this uploader has
 	 * been configured via the constructor. This method can also throw an
-	 * instance of Exception if the service document cannot be parsed.
+	 * instance of CannotParseServiceDocumentException if the service document
+	 * cannot be parsed.
 	 *
 	 * @param string $onBehalfOf Optional string that will set the X-On-Behalf-Of header
 	 * @return SWORDAPPServiceDocument
 	 *
-	 * @throws Exception
+	 * @throws CannotParseServiceDocumentException
 	 */
 	public function requestServiceDocument($onBehalfOf="") {
-		return $this->client->servicedocument(
-			$this->service_doc,
-			$this->username,
-			$this->password,
-			$onBehalfOf
-		);
+		try {
+			return $this->client->servicedocument(
+				$this->service_doc,
+				$this->username,
+				$this->password,
+				$onBehalfOf
+			);
+		}
+		catch(Exception $e) {
+			throw new CannotParseServiceDocumentException($e->getMessage());
+		}
 	}
 }
