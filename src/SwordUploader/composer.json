@@ -1,0 +1,27 @@
+{
+    "name": "csun-metalab/sword-uploader",
+    "description": "Allows for the uploading of documents to a repository that uses the SWORD API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew Fritz",
+            "email": "mattf@burbankparanormal.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "minimum-stability": "stable",
+    "autoload": {
+        "classmap": [
+            "src/SwordUploader/"
+        ],
+        "files": [
+            "src/SwordUploader/swordapp-php-library/utils.php"
+        ],
+        "psr-0": {
+            "CSUNMetaLab\\SwordUploader\\": "src/SwordUploader/"
+        }
+    }
+}
