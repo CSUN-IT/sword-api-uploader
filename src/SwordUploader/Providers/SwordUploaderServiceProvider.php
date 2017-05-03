@@ -8,8 +8,8 @@ use Illuminate\Support\ServiceProvider;
 class SwordServiceProvider extends ServiceProvider
 {
 	public function register() {
-		// register the uploader as a singleton
-		$this->app->singleton('sword', function($app) {
+		// register the uploader into the service container
+		$this->app->bind('sword', function($app) {
 			return new SwordUploader(
 				config('sword.service_document'),
 				config('sword.deposit'),
