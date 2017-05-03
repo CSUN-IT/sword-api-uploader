@@ -76,4 +76,6 @@ This is the password that will be used for authentication during SWORD operation
 
 ## Underlying SWORD API Functionality
 
-The underlying SWORD API functionality for packaging and depositing documents originally comes from `swordapp-php-library` created by Stuart Lewis. You can find the code specific to the library here: https://github.com/swordapp/swordapp-php-library
+The underlying SWORD API functionality for packaging and depositing documents originally comes from `swordapp-php-library` created by Stuart Lewis.
+
+You can find the code specific to the library here: https://github.com/swordapp/swordapp-php-library
