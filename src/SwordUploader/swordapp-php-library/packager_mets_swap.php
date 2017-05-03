@@ -179,7 +179,7 @@ class PackagerMetsSwap {
         }
     }
 
-    function create() {
+    public function create() {
         // Write the metadata (mets) file
         $fh = @fopen($this->sac_root_in . '/' . $this->sac_dir_in . '/' . $this->sac_metadata_filename, 'w');
         if (!$fh) {
