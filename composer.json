@@ -1,6 +1,6 @@
 {
     "name": "csun-metalab/sword-api-uploader",
-    "description": "Allows for the uploading of documents to a repository that uses the SWORD API",
+    "description": "Allows for the uploading of documents in a Laravel application to a repository that uses the SWORD API",
     "type": "library",
     "license": "MIT",
     "authors": [
