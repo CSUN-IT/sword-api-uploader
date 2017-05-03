@@ -4,6 +4,9 @@ namespace CSUNMetaLab\SwordUploader\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @see \CSUNMetaLab\SwordUploader\Uploaders\SwordUploader
+ */
 class Sword extends Facade
 {
 	/**

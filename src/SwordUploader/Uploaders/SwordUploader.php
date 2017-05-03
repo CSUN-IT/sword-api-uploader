@@ -21,4 +21,23 @@ class SwordUploader
 
 		$this->client = new SWORDAPPClient();
 	}
+
+	/**
+	 * Requests and returns the service document based on how this uploader has
+	 * been configured via the constructor. This method can also throw an
+	 * instance of Exception if the service document cannot be parsed.
+	 *
+	 * @param string $onBehalfOf Optional string that will set the X-On-Behalf-Of header
+	 * @return SWORDAPPServiceDocument
+	 *
+	 * @throws Exception
+	 */
+	public function requestServiceDocument($onBehalfOf="") {
+		return $this->client->servicedocument(
+			$this->service_doc,
+			$this->username,
+			$this->password,
+			$onBehalfOf
+		);
+	}
 }

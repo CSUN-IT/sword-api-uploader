@@ -19,7 +19,7 @@ class SwordServiceProvider extends ServiceProvider
 		});
 
 		// register the facade for the uploader
-		$this->app->alias('sword', 'CSUNMetaLab\SwordUploader\Uploaders\SwordUploader');
+		$this->app->alias('sword', SwordUploader::class);
 	}
 
 	public function boot() {
