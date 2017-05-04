@@ -244,6 +244,10 @@ class ThesisPackager implements PackagerContract {
 
 	/**
 	 * @see CSUNMetaLab\SwordUploader\Contracts\PackagerContract
+	 *
+	 * @throws CannotWritePackageMetadataException
+	 * @throws CannotCreatePackageDependencyException
+	 * @throws CannotCreatePackageException
 	 */
 	public function package() {
 		// Write the metadata (mets) file
