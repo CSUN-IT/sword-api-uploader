@@ -42,4 +42,66 @@ return [
     */
     'password' => env("SWORD_PASSWORD", ""),
 
+    /*
+    |--------------------------------------------------------------------------
+    | SWORD API File Location Configuration
+    |--------------------------------------------------------------------------
+    |
+    | The configuration parameters for file-based operations.
+    |
+    */
+    'files' => [
+
+        'roots' => [
+
+            /*
+            |--------------------------------------------------------------------------
+            | SWORD API Input Directories
+            |--------------------------------------------------------------------------
+            |
+            | The configuration parameters for input directories.
+            |
+            */
+            'input' => [
+
+                'root' => env("SWORD_FILE_ROOT_IN", ""),
+
+                'subdir' => env("SWORD_FILE_SUBDIR_IN", ""),
+
+                'theses' => [
+
+                    'document' => env("SWORD_THESIS_DOCUMENT_ROOT_IN", ""),
+
+                    'supplemental' => env("SWORD_THESIS_SUPPLEMENTAL_ROOT_IN", ""),
+
+                ],
+
+            ],
+
+            /*
+            |--------------------------------------------------------------------------
+            | SWORD API Output Directories
+            |--------------------------------------------------------------------------
+            |
+            | The configuration parameters for output directories.
+            |
+            */
+            'output' => [
+
+                'package' => env("SWORD_PACKAGE_ROOT_OUT", ""),
+
+                'theses' => [
+
+                    'package' => env("SWORD_THESIS_PACKAGE_ROOT_OUT", ""),
+
+                    'mets' => env("SWORD_THESIS_METS_ROOT_OUT", ""),
+
+                ],
+
+            ],
+
+        ],
+
+    ],
+
 ];
