@@ -8,6 +8,7 @@ use CSUNMetaLab\SwordUploader\Contracts\PackagerContract;
 use ZipArchive;
 
 use Exception;
+use CSUNMetaLab\SwordUploader\Exceptions\CannotCreatePackageDependencyException;
 use CSUNMetaLab\SwordUploader\Exceptions\CannotCreatePackageException;
 use CSUNMetaLab\SwordUploader\Exceptions\CannotWritePackageMetadataException;
 
@@ -242,7 +243,7 @@ class ThesisPackager implements PackagerContract {
 	}
 
 	/**
-	 * @see CSUNMetaLab\SwordUploader\Contracts\PackagerContract@package
+	 * @see CSUNMetaLab\SwordUploader\Contracts\PackagerContract
 	 */
 	public function package() {
 		// Write the metadata (mets) file
@@ -260,22 +261,28 @@ class ThesisPackager implements PackagerContract {
 		// Create the zipped package
 		if (class_exists("ZipArchive")) {
 			$zip = new ZipArchive();
-			$zip->open($this->zipRootOut.'/'.$this->zipFileOut, ZIPARCHIVE::CREATE);
-			// Add the mets file
-			$zip->addFile($this->metsRootOut.'/'.$this->metadataFilename, 'mets.xml');
-			// Add all thesis files
-			foreach ($this->files as $value){
-				if($value["fileType"]=="final"){
-					$fileRoot = $this->finalRootIn;
+			$result = $zip->open($this->zipRootOut.'/'.$this->zipFileOut, ZIPARCHIVE::CREATE);
+			if($result === TRUE) {
+				// Add the mets file
+				$zip->addFile($this->metsRootOut.'/'.$this->metadataFilename, 'mets.xml');
+				// Add all thesis files
+				foreach ($this->files as $value){
+					if($value["fileType"]=="final"){
+						$fileRoot = $this->finalRootIn;
+					}
+					else if($value["fileType"]=="supp"){
+						$fileRoot = $this->suppRootIn;
+					}
+					$zip->addFile($fileRoot.'/'.$value["basename"], $value["originalName"]); 
 				}
-				else if($value["fileType"]=="supp"){
-					$fileRoot = $this->suppRootIn;
-				}
-				$zip->addFile($fileRoot.'/'.$value["basename"], $value["originalName"]); 
+				$zip->close();
 			}
-			$zip->close();
+			else
+			{
+				throw new CannotCreatePackageException("Could not open package zip file for writing.");
+			}
 		} else {
-			throw new CannotCreatePackageException("Error creating package zip file. ZipArchive not installed.");
+			throw new CannotCreatePackageDependencyException("Error creating package zip file. ZipArchive not installed.");
 		}
 	}
 

@@ -25,7 +25,7 @@ class BasicPackager extends PackagerMetsSwap implements PackagerContract {
 	}
 
 	/**
-	 * @see CSUNMetaLab\SwordUploader\Contracts\PackagerContract@package
+	 * @see CSUNMetaLab\SwordUploader\Contracts\PackagerContract
 	 */
 	public function package() {
 		try {
