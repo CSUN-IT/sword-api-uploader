@@ -283,7 +283,7 @@ class ThesisPackager implements PackagerContract {
 			}
 			else
 			{
-				throw new CannotCreatePackageException("Could not open package zip file for writing.");
+				throw new CannotCreatePackageException("Could not open package zip file for writing (ZipArchive error code $result).");
 			}
 		} else {
 			throw new CannotCreatePackageDependencyException("Error creating package zip file. ZipArchive not installed.");
