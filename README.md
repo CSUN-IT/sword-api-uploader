@@ -56,6 +56,10 @@ Finally, run the following Artisan command to publish the configuration file:
 php artisan vendor:publish
 ```
 
+The configuration file will be in `config/sword.php` and you can modify those values further with the `config()` helper function before the deposit takes place.
+
+The packaging and deposit functionality use those configuration values in order to figure out the service document, credentials, repository identifier, and the relevant directories on the filesystem.
+
 ## Global Environment Variables
 
 The environment variables you added to your `.env` file are the following:
@@ -112,7 +116,7 @@ This is the directory on the filesystem to where the metadata (mets.xml) file th
 
 ## Regular File Path Environment Variables
 
-You need to add these environment variables if you are performing non-thesis deposits for regular files (such as course syllabi).
+You need to add these environment variables if you are performing non-thesis deposits for regular files (such as class syllabi).
 
 Add the following values to your `.env` file and then configure them appropriately based on their descriptions:
 
