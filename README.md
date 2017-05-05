@@ -1,4 +1,7 @@
 # SWORD API Uploader
+
+:no_entry_sign: *This is a WIP (Work in Progress). Please do not attempt to install this package until this notice is removed.* :no_entry_sign:
+
 Allows for the uploading of documents in a Laravel project to a repository that uses the SWORD API.
 
 This package is built for version 5.0 of Laravel and above.
