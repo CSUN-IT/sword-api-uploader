@@ -6,15 +6,24 @@ Allows for the uploading of documents in a Laravel project to a repository that 
 
 This package is built for version 5.0 of Laravel and above.
 
+## Table of Contents
+
+* [Installation](#installation)
+* [Global Environment Variables](#global-environment-variables)
+* [Thesis File Path Environment Variables](#thesis-file-path-environment-variables)
+* [Regular File Path Environment Variables](#regular-file-path-environment-variables)
+* [Usage](#usage)
+* [Underlying SWORD API Functionality](#underlying-sword-api-functionality)
+
+## Installation
+
 To install from Composer, use the following command:
 
 ```
 composer require csun-metalab/sword-api-uploader
 ```
 
-## Installation
-
-First, add the following lines to your `.env` file to configure your connection to the repository:
+Now, add the following lines to your `.env` file to configure your connection to the repository:
 
 ```
 SWORD_SERVICE_DOC=
@@ -145,6 +154,10 @@ This is the directory on the filesystem containing the files that will be deposi
 ### SWORD_PACKAGE_ROOT_OUT
 
 This is the directory on the filesystem where the package (ZIP file containing the file to deposit) will be written.
+
+## Usage
+
+Coming Soon!
 
 ## Underlying SWORD API Functionality
 
