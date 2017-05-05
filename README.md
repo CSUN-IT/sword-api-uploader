@@ -1,4 +1,4 @@
-# SWORD API Uploader
+# :package: SWORD API Uploader :package:
 
 :no_entry_sign: *This is a WIP (Work in Progress). Please do not attempt to install this package until this notice is removed.* :no_entry_sign:
 
@@ -6,16 +6,16 @@ Allows for the uploading of documents in a Laravel project to a repository that 
 
 This package is built for version 5.0 of Laravel and above.
 
-## Table of Contents
+## :closed_book: Table of Contents
 
-* [Installation](#installation)
-* [Global Environment Variables](#global-environment-variables)
-* [Thesis File Path Environment Variables](#thesis-file-path-environment-variables)
-* [Regular File Path Environment Variables](#regular-file-path-environment-variables)
-* [Usage](#usage)
-* [Underlying SWORD API Functionality](#underlying-sword-api-functionality)
+* [Installation](#wrench-installation)
+* [Global Environment Variables](#notebook-global-environment-variables)
+* [Thesis File Path Environment Variables](#mortar_board-thesis-file-path-environment-variables)
+* [Regular File Path Environment Variables](#page_facing_up-regular-file-path-environment-variables)
+* [Usage](#computer-usage)
+* [Underlying SWORD API Functionality](#electric_plug-underlying-sword-api-functionality)
 
-## Installation
+## :wrench: Installation
 
 To install from Composer, use the following command:
 
@@ -72,7 +72,7 @@ The configuration file will be in `config/sword.php` and you can modify those va
 
 The packaging and deposit functionality use those configuration values in order to figure out the service document, credentials, repository identifier, and the relevant directories on the filesystem.
 
-## Global Environment Variables
+## :notebook: Global Environment Variables
 
 The environment variables you added to your `.env` file are the following:
 
@@ -92,7 +92,7 @@ This is the username that will be used for authentication during SWORD operation
 
 This is the password that will be used for authentication during SWORD operations.
 
-## Thesis File Path Environment Variables
+## :mortar_board: Thesis File Path Environment Variables
 
 You need to add these environment variables if you are performing deposits for theses or academic dissertations.
 
@@ -126,7 +126,7 @@ This is the directory on the filesystem to where the package (ZIP file containin
 
 This is the directory on the filesystem to where the metadata (mets.xml) file that describes properties associated with the thesis will be written.
 
-## Regular File Path Environment Variables
+## :page_facing_up: Regular File Path Environment Variables
 
 You need to add these environment variables if you are performing non-thesis deposits for regular files (such as class syllabi).
 
@@ -155,11 +155,11 @@ This is the directory on the filesystem containing the files that will be deposi
 
 This is the directory on the filesystem where the package (ZIP file containing the file to deposit) will be written.
 
-## Usage
+## :computer: Usage
 
 Coming Soon!
 
-## Underlying SWORD API Functionality
+## :electric_plug: Underlying SWORD API Functionality
 
 The underlying SWORD API functionality for packaging and depositing documents originally comes from `swordapp-php-library` created by Stuart Lewis.
 
