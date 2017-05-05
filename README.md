@@ -20,7 +20,7 @@ SWORD_USERNAME=
 SWORD_PASSWORD=
 ```
 
-You'll also need to add other lines further down as defined in either the Thesis File Path Environment Variables or Regular File Path Environment Variables section based on the type of deposit you're performing.
+You'll also need to add other lines further down as defined in either the [Thesis File Path Environment Variables](#thesis-file-path-environment-variables) or [Regular File Path Environment Variables](#regular-file-path-environment-variables) section based on the type of deposit you're performing.
 
 Next, add the service provider to your `providers` array in Laravel as follows:
 
