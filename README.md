@@ -9,7 +9,7 @@ This package is built for version 5.0 of Laravel and above.
 ## :closed_book: Table of Contents
 
 * [Installation](#wrench-installation)
-* [Global Environment Variables](#notebook-global-environment-variables)
+* [Global Environment Variables](#earth_americas-global-environment-variables)
 * [Thesis File Path Environment Variables](#mortar_board-thesis-file-path-environment-variables)
 * [Regular File Path Environment Variables](#page_facing_up-regular-file-path-environment-variables)
 * [Usage](#computer-usage)
@@ -72,7 +72,7 @@ The configuration file will be in `config/sword.php` and you can modify those va
 
 The packaging and deposit functionality use those configuration values in order to figure out the service document, credentials, repository identifier, and the relevant directories on the filesystem.
 
-## :notebook: Global Environment Variables
+## :earth_americas: Global Environment Variables
 
 The environment variables you added to your `.env` file are the following:
 
