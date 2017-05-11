@@ -62,7 +62,6 @@ class ThesisPackager implements PackagerContract {
 	public $department;
 
 	public $identifier;
-	public $department;
 	public $copyrightHolder;
 	public $custodian;
 	public $citation;
