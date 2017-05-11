@@ -2,7 +2,6 @@
 
 namespace CSUNMetaLab\SwordUploader\Packagers;
 
-use PackagerMetsSwap;
 use CSUNMetaLab\SwordUploader\Contracts\PackagerContract;
 
 use ZipArchive;
