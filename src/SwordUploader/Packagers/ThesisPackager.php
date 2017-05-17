@@ -263,7 +263,6 @@ class ThesisPackager implements PackagerContract {
 		// Create the zipped package
 		if (class_exists("ZipArchive")) {
 			$zip = new ZipArchive();
-			dd($this->files);
 			$result = $zip->open($this->zipRootOut.'/'.$this->zipFileOut, ZIPARCHIVE::CREATE | ZIPARCHIVE::OVERWRITE);
 			if($result === TRUE) {
 				// Add the mets file
