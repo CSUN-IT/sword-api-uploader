@@ -433,24 +433,28 @@ class ThesisPackager implements PackagerContract {
 			$this->customStatement($fh, "department", $this->valueString($this->department));
 				}
 
-		// Provenances, rights, and identifier 
-				foreach ($this->provenances as $provenance) {
-						$this->statement($fh,
-														 "http://purl.org/dc/terms/provenance",
-														 $this->valueString($provenance));
-				}
+		// Provenances, rights, and identifier
+		if (is_array($this->provenances)) { 
+			foreach ($this->provenances as $provenance) {
+					$this->statement($fh,
+						 "http://purl.org/dc/terms/provenance",
+						 $this->valueString($provenance));
+			}
+		}
 
-				foreach ($this->rights as $right) {
-						$this->statement($fh,
-														 "http://purl.org/dc/terms/rights",
-														 $this->valueString($right));
-				}
+		if (is_array($this->rights)) {
+			foreach ($this->rights as $right) {
+					$this->statement($fh,
+						 "http://purl.org/dc/terms/rights",
+						 $this->valueString($right));
+			}
+		}
 
-				if (isset($this->identifier)) {
-						$this->statement($fh,
-														 "http://purl.org/dc/elements/1.1/identifier", 
-														 $this->valueString($this->identifier));
-				}
+		if (isset($this->identifier)) {
+				$this->statement($fh,
+						 "http://purl.org/dc/elements/1.1/identifier", 
+						 $this->valueString($this->identifier));
+		}
 		 
 
 				fwrite($fh, "<epdcx:statement epdcx:propertyURI=\"http://purl.org/eprint/terms/isExpressedAs\" " .
