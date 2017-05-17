@@ -194,28 +194,28 @@ class ThesisPackager implements PackagerContract {
 
 	/**************** Additional Setters ******************/
 
-	function addProvenance($sac_provenance) {
-			array_push($this->sac_provenances, $this->clean($sac_provenance));
+	function addProvenance($provenance) {
+			array_push($this->provenances, $this->clean($provenance));
 	}
 
-	function setIdentifier($sac_theidentifier) {
-			$this->sac_identifier = $sac_theidentifier;
+	function setIdentifier($theidentifier) {
+			$this->identifier = $theidentifier;
 	}
 
-	function setStatusStatement($sac_thestatus) {
-			$this->sac_statusstatement = $sac_thestatus;
+	function setStatusStatement($thestatus) {
+			$this->statusstatement = $thestatus;
 	}
 
-	function setCopyrightHolder($sac_thecopyrightholder) {
-			$this->sac_copyrightHolder = $sac_thecopyrightholder;
+	function setCopyrightHolder($thecopyrightholder) {
+			$this->copyrightHolder = $thecopyrightholder;
 	}
 
-	function setCustodian($sac_thecustodian) {
-			$this->sac_custodian = $this->clean($sac_thecustodian);
+	function setCustodian($thecustodian) {
+			$this->custodian = $this->clean($thecustodian);
 	}
 
-	function setCitation($sac_thecitation) {
-			$this->sac_citation = $this->clean($sac_thecitation);
+	function setCitation($thecitation) {
+			$this->citation = $this->clean($thecitation);
 	}
 
 
@@ -434,22 +434,22 @@ class ThesisPackager implements PackagerContract {
 				}
 
 		// Provenances, rights, and identifier 
-				foreach ($this->sac_provenances as $sac_provenance) {
+				foreach ($this->provenances as $provenance) {
 						$this->statement($fh,
 														 "http://purl.org/dc/terms/provenance",
-														 $this->valueString($sac_provenance));
+														 $this->valueString($provenance));
 				}
 
-				foreach ($this->sac_rights as $sac_right) {
+				foreach ($this->rights as $right) {
 						$this->statement($fh,
 														 "http://purl.org/dc/terms/rights",
-														 $this->valueString($sac_right));
+														 $this->valueString($right));
 				}
 
-				if (isset($this->sac_identifier)) {
+				if (isset($this->identifier)) {
 						$this->statement($fh,
 														 "http://purl.org/dc/elements/1.1/identifier", 
-														 $this->valueString($this->sac_identifier));
+														 $this->valueString($this->identifier));
 				}
 		 
 
@@ -470,23 +470,23 @@ class ThesisPackager implements PackagerContract {
 					"http://purl.org/eprint/entityType/Expression");
 
 
-				if (isset($this->sac_statusstatement)) {
+				if (isset($this->statusstatement)) {
 						$this->statementVesURIValueURI($fh, 
 							 "http://purl.org/eprint/terms/Status",
 							 "http://purl.org/eprint/terms/Status",
-							 $this->sac_statusstatement);
+							 $this->statusstatement);
 				}
 
-				if (isset($this->sac_copyrightHolder)) {
+				if (isset($this->copyrightHolder)) {
 						$this->statement($fh, 
 							 "http://purl.org/eprint/terms/copyrightHolder", 
-							 $this->valueString($this->sac_copyrightHolder));
+							 $this->valueString($this->copyrightHolder));
 				}
 
-				if (isset($this->sac_citation)) {
+				if (isset($this->citation)) {
 						$this->statement($fh, 
 							 "http://purl.org/eprint/terms/bibliographicCitation", 
-							 $this->valueString($this->sac_citation));
+							 $this->valueString($this->citation));
 				}
 
 				fwrite($fh, "</epdcx:description>\n");   
