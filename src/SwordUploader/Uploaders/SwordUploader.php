@@ -93,6 +93,34 @@ class SwordUploader
 	}
 
 	/**
+	 * Deposits the specified file into the repository that was been configured
+	 * upon instantiation. This method uses the default configuration parameters
+	 * in order to describe the deposit behavior.
+	 *
+	 * All other functionality of this method matches the deposit() method.
+	 *
+	 * @param string $filename The path to the file to deposit
+	 *
+	 * @return SWORDAPPEntry|SWORDAPPErrorDocument
+	 *
+	 * @throws CannotParseDepositResponseException
+	 * @throws CannotParseDepositErrorResponseException
+	 * @throws DepositException
+	 *
+	 * @see CSUNMetaLab\SwordUploader\Uploaders\SwordUploader@deposit
+	 */
+	public function depositDefault($filename) {
+		return $this->deposit(
+			$filename,
+			config('sword.deposit.onBehalfOf'),
+			config('sword.deposit.packaging'),
+			config('sword.deposit.contentType'),
+			config('sword.deposit.noOp'),
+			config('sword.deposit.verbose')
+		);
+	}
+
+	/**
 	 * Requests and returns the service document based on how this uploader has
 	 * been configured via the constructor. This method can also throw an
 	 * instance of CannotParseServiceDocumentException if the service document

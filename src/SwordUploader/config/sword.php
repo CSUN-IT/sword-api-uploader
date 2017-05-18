@@ -44,6 +44,29 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | SWORD API File Deposit Behavior
+    |--------------------------------------------------------------------------
+    |
+    | The configuration parameters that modify the behavior of the deposit
+    | operation.
+    |
+    */
+    'deposit' => [
+
+        'contentType' => env("SWORD_CONTENT_TYPE", "application/zip"),
+
+        'packaging' => env("SWORD_PACKAGING", "http://purl.org/net/sword-types/METSDSpaceSIP"),
+
+        'onBehalfOf' => env("SWORD_ON_BEHALF_OF", ""),
+
+        'noOp' => env("SWORD_NO_OP", false),
+
+        'verbose' => env("SWORD_VERBOSE", false),
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | SWORD API File Location Configuration
     |--------------------------------------------------------------------------
     |
