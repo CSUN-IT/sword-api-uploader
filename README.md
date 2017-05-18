@@ -1,7 +1,5 @@
 # :package: SWORD API Uploader :package:
 
-:no_entry_sign: *This is a WIP (Work in Progress). Please do not attempt to install this package until this notice is removed.* :no_entry_sign:
-
 Allows for the uploading of documents in a Laravel project to a repository that uses the SWORD API.
 
 This package is built for version 5.0 of Laravel and above.
@@ -91,6 +89,30 @@ This is the username that will be used for authentication during SWORD operation
 ### SWORD_PASSWORD
 
 This is the password that will be used for authentication during SWORD operations.
+
+## :seat: Global Deposit Behavior Variables
+
+You only need to add these environment variables if you want to override the default behavior during deposit operations.
+
+### SWORD_CONTENT_TYPE
+
+Allows you to change the content type of deposits. The default is `application/zip`.
+
+### SWORD_PACKAGING
+
+Allows you to change the packaging format of deposits. The default is `http://purl.org/net/sword-types/METSDSpaceSIP` (METS format for a DSpace repository).
+
+### SWORD_ON_BEHALF_OF
+
+Allows you to set the `X-On-Behalf-Of` header during deposits. The default is an empty string.
+
+### SWORD_NO_OP
+
+Allows you to set the `X-No-Op` header during deposits. The default is `false`.
+
+### SWORD_VERBOSE
+
+Allows you to set the `X-Verbose` header during deposits. The default is `false`.
 
 ## :mortar_board: Thesis File Path Environment Variables
 
