@@ -63,6 +63,8 @@ return [
 
         'verbose' => env("SWORD_VERBOSE", false),
 
+        'successCode' => env("SWORD_SUCCESS_CODE", 201),
+
     ],
 
     /*
