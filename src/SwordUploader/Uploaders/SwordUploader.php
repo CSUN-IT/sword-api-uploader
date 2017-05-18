@@ -14,7 +14,7 @@ use CSUNMetaLab\SwordUploader\Exceptions\DepositException;
 class SwordUploader
 {
 	private $service_doc;
-	private $deposit;
+	private $deposit_id;
 	private $username;
 	private $password;
 
@@ -30,7 +30,7 @@ class SwordUploader
 	 */
 	public function __construct($service_doc, $deposit, $username, $password) {
 		$this->service_doc = $service_doc;
-		$this->deposit = $deposit;
+		$this->deposit_id = $deposit;
 		$this->username = $username;
 		$this->password = $password;
 
@@ -65,7 +65,7 @@ class SwordUploader
 		$noOp=false, $verbose=false) {
 		try {
 			return $this->client->deposit(
-				$this->deposit,
+				$this->deposit_id,
 				$this->username,
 				$this->password,
 				$onBehalfOf,
@@ -87,6 +87,7 @@ class SwordUploader
 			}
 		}
 		catch(Exception $e) {
+			dd($e);
 			// some other kind of exception occurred
 			throw new DepositException($e->getMessage());
 		}
@@ -112,11 +113,11 @@ class SwordUploader
 	public function depositDefault($filename) {
 		return $this->deposit(
 			$filename,
-			config('sword.deposit.onBehalfOf'),
-			config('sword.deposit.packaging'),
-			config('sword.deposit.contentType'),
-			config('sword.deposit.noOp'),
-			config('sword.deposit.verbose')
+			config('sword.behavior.onBehalfOf'),
+			config('sword.behavior.packaging'),
+			config('sword.behavior.contentType'),
+			config('sword.behavior.noOp'),
+			config('sword.behavior.verbose')
 		);
 	}
 

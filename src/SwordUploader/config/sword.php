@@ -51,7 +51,7 @@ return [
     | operation.
     |
     */
-    'deposit' => [
+    'behavior' => [
 
         'contentType' => env("SWORD_CONTENT_TYPE", "application/zip"),
 
