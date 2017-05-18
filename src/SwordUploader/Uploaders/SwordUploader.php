@@ -87,7 +87,6 @@ class SwordUploader
 			}
 		}
 		catch(Exception $e) {
-			dd($e);
 			// some other kind of exception occurred
 			throw new DepositException($e->getMessage());
 		}
