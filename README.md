@@ -8,6 +8,7 @@ This package is built for version 5.0 of Laravel and above.
 
 * [Installation](#wrench-installation)
 * [Global Environment Variables](#earth_americas-global-environment-variables)
+* [Global Deposit Behavior Variables](#seat-global-deposit-behavior-variables)
 * [Thesis File Path Environment Variables](#mortar_board-thesis-file-path-environment-variables)
 * [Regular File Path Environment Variables](#page_facing_up-regular-file-path-environment-variables)
 * [Usage](#computer-usage)
